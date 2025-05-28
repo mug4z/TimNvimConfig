@@ -1,4 +1,4 @@
-# kickstart.nvim
+# TimNvimConfig (Yes this is the readme of kickstart.nvim, it helped me a lot)
 
 ## Introduction
 
