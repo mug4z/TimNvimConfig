@@ -188,6 +188,10 @@ vim.keymap.set("n", "<leader>k", ":Neotree git_status<CR>", { desc = "Open Neotr
 
 -- Set a command so I can delete a buffer
 vim.keymap.set("n", "<leader>bk", ":bdelete<CR>", { desc = "Delete the current buffer your on " })
+
+-- Write but easier
+vim.keymap.set("n", "<leader>w", ":write<CR>", { desc = "Save" })
+
 -- Set the ctrl-s commands to save the current file I'm using
 vim.keymap.set("n", "<C-s>", ":update<CR>", { desc = "Save the file if modified" })
 
@@ -381,7 +385,6 @@ require("lazy").setup({
 				["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
 				["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
 				["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
-				["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
 				["<leader>t"] = { name = "[T]oggle", _ = "which_key_ignore" },
 				["<leader>h"] = { name = "Git [H]unk", _ = "which_key_ignore" },
 			})
@@ -581,14 +584,6 @@ require("lazy").setup({
 					-- Fuzzy find all the symbols in your current document.
 					--  Symbols are things like variables, functions, types, etc.
 					map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-
-					-- Fuzzy find all the symbols in your current workspace.
-					--  Similar to document symbols, except searches over your entire project.
-					map(
-						"<leader>ws",
-						require("telescope.builtin").lsp_dynamic_workspace_symbols,
-						"[W]orkspace [S]ymbols"
-					)
 
 					-- Rename the variable under your cursor.
 					--  Most Language Servers support renaming across files, etc.
