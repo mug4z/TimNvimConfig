@@ -180,7 +180,6 @@ vim.keymap.set(
 	{ desc = "Open terminal hotizontal" }
 )
 vim.keymap.set("n", "<leader>tv", "<Cmd>ToggleTerm size=80 direction=vertical<CR>", { desc = "Open terminal vertical" })
-vim.keymap.set("t", "<F7>", "<Cmd>ToggleTerm<CR>", { desc = "Use to close terminal" })
 
 -- Set the keymap to open file Nvrimtree file explorer
 vim.keymap.set("n", "<leader>j", ":Neotree<CR>", { desc = "Open Neotree" })
@@ -194,6 +193,10 @@ vim.keymap.set("n", "<leader>w", ":write<CR>", { desc = "Save" })
 
 -- Set the ctrl-s commands to save the current file I'm using
 vim.keymap.set("n", "<C-s>", ":update<CR>", { desc = "Save the file if modified" })
+
+-- Better buffer navigation
+vim.keymap.set("n", "<S-tab>", ":bprev<CR>", { desc = "Go to the previous buffer" })
+vim.keymap.set("n", "<tab>", ":bnext<CR>", { desc = "Go to the next buffer" })
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
@@ -212,7 +215,11 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-
+vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w><C-k>", { desc = "Move focus to the upper window" })
+vim.keymap.set("t", "<F7>", "<Cmd>ToggleTerm<CR>", { desc = "Use to close terminal" })
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
