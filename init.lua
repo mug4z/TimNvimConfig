@@ -182,10 +182,6 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>tv", "<Cmd>ToggleTerm size=80 direction=vertical<CR>", { desc = "Open terminal vertical" })
 
--- Set the keymap to open file Nvrimtree file explorer
-vim.keymap.set("n", "<leader>j", ":Neotree<CR>", { desc = "Open Neotree" })
-vim.keymap.set("n", "<leader>k", ":Neotree git_status<CR>", { desc = "Open Neotree git status" })
-
 -- Set a command so I can delete a buffer
 vim.keymap.set("n", "<leader>bk", ":bdelete<CR>", { desc = "Delete the current buffer your on " })
 
