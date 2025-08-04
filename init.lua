@@ -353,6 +353,10 @@ require("lazy").setup({
 	-- 		-- fill any relevant options here
 	-- 	},
 	-- },
+	{
+		"ggandor/leap.nvim",
+	},
+
 	{ -- Terminal plugin
 		"akinsho/toggleterm.nvim",
 		version = "*",
@@ -915,7 +919,7 @@ require("lazy").setup({
 			-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
 			-- - sd'   - [S]urround [D]elete [']quotes
 			-- - sr)'  - [S]urround [R]eplace [)] [']
-			require("mini.surround").setup()
+			-- require("mini.surround).setup()
 
 			-- Simple and easy statusline.
 			--  You could remove this setup call if you don't like it,
@@ -1012,6 +1016,6 @@ require("lazy").setup({
 		},
 	},
 })
-
+require("leap").set_default_mappings()
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
